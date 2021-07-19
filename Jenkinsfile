@@ -15,8 +15,10 @@ pipeline {
 			}}
         stage('Build') { 
             steps {
-                chmod +x scripts/copy.sh
+                sh """
+				chmod +x scripts/copy.sh
 				sh scripts/copy.sh
+				"""
             }
         }
     }
