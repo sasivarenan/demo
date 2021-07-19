@@ -10,7 +10,7 @@ pipeline {
 				checkout([
 					$class: 'GitSCM',
 					branches: [[name: '*/main']],
-					userRemoteConfigs: [[url: https://github.com/sasivarenan/demo.git]]
+					userRemoteConfigs: [[url: 'https://github.com/sasivarenan/demo.git']]
 					])
 			}}
         stage('Build') { 
