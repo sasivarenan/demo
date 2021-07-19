@@ -1,8 +1,7 @@
 pipeline {
     agent any 
 	environment {
-        AWS_ACCESS_KEY_ID     = credentials('AKIAT54UVAUVWGLEXSH3')
-        AWS_SECRET_ACCESS_KEY = credentials('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')
+       SECRET_VALUE = credentials('s3-bucketaccess')
     }
     stages {
 		stage('Code Checkout'){
@@ -13,7 +12,7 @@ pipeline {
 					userRemoteConfigs: [[url: 'https://github.com/sasivarenan/demo.git']]
 					])
 			}}
-        stage('Build') { 
+        stage('Deploy') { 
             steps {
                 sh """
 				chmod +x scripts/copy.sh
